@@ -118,7 +118,7 @@ const createList = (availableItems) => {
   // Solution code here...
   const groceryList = [];
   availableItems.forEach(item => {
-    if (item.available === true)
+    if (item.available)
       groceryList.push(item.name);
     });
     return groceryList;
