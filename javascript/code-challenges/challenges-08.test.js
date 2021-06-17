@@ -56,6 +56,14 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  charArray.sort((a,b) => {
+    if(a.children.length < b.children.length)
+    return -1;
+    
+    if(a.children.length === b.children.length)
+      return a.house - b.house;
+  })
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +75,9 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  if (str.match(/w/g))
+    return true;
+    else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +94,9 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  if(input.toString().match(/[0-9]\w/g))
+  return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +108,10 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  let regex = /world/g;
+  if(input.match(regex))
+  return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,6 +124,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex= /\b[A-Z]\w*/g;
+  let newArr= str.match(regex)
+  if(regex.test(str)){
+  return(newArr);
+  } else{
+    return []
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +141,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /\b^[A-J]\w*/g;
+     return arr.filter(city => {
+      if(city.match(regex))
+        return city;
+    })
 };
 
 /* ------------------------------------------------------------------------------------------------
