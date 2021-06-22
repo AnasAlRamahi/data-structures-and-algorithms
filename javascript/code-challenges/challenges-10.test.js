@@ -95,7 +95,7 @@ const grandTotal = (stores) => {
   for (let i = 0; i < hoursOpen.length; i++) {
     total = 0;
     for (let j = 0; j < stores.length; j++) {
-        total += stores[j][i];    
+      total += stores[j][i];    
     }
     arrOfTotals[i] = total;
   }
@@ -117,7 +117,7 @@ const salesData = (hours, data) => {
   const arr = [];
   data.forEach((number,index) => {
     arr.push({sales: number+' cookies', time: hours[index]});
-  })
+  });
   return arr;
 };
 
@@ -154,7 +154,7 @@ const howManyTreats = (arr) => {
       }
     }
   }
-    return x;
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
